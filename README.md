@@ -1,1 +1,13 @@
-# HW_2_3_Game_of_Life
+# Software Engineering Group 6
+
+**Hw-02 Repo (Game of Life)**
+
+## Team Members
+```
+Kenil Shah
+Urvish Vasani
+Faraaz Kakiwala
+Raj Shrivastava
+Harshit Patel
+``
+
