@@ -6,7 +6,7 @@
 **Hw-02 Repo (Game of Life)**
 
 ## Team Members
-```
+
 Kenil Shah
 Urvish Vasani
 Faraaz Kakiwala
@@ -15,8 +15,8 @@ Harshit Patel
 ```
 
 ## How to run?
-'''
+```
 1) Click on the repl badge available in README.md
 
-2) Change the language to **Julia** and use ** julia code/julia_implementation/GOL.jl ** as run command.
-'''
+2) Change the language to **Julia** and use **julia code/julia_implementation/GOL.jl** as run command.
+```
