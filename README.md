@@ -16,10 +16,10 @@ Harshit Patel
 ```
 
 ## How to run?
-'''
+```
 1) Click on the repl badge available in README.md
 
 2) Change the language to **Julia** and use **julia code/julia/GOL.jl** as run command.
 
 3) Change the language to **Kotlin** and use **kotlinc -d main.jar code/kotlin/GOL.kt && kotlin -classpath main.jar GOLKt** as run command.
-'''
+```
