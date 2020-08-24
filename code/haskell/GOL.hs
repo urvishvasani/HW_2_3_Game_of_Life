@@ -14,16 +14,6 @@ TODO :-
 import Data.List (unfoldr)
 import Data.Array.Unboxed
 
--- utitily functions --
-
--- cls function clears the screen after each iteration --
-cls :: IO ()
-cls = putStrLn "\ESC[2J"
-
--- wait function waits for a certain amount of time after each iteration --
-wait :: Int -> IO ()
-wait n = sequence_ [return () | _ <- [1..n]]
-
 -- Board data type is basically an array of (x, y) bool where (x, y) represents map coordinates and if bool is true then the cell is alive if false then dead
 type Board = UArray (Int,Int) Bool
  -- The grid is indexed by (y, x).
@@ -93,6 +83,7 @@ runTest n (w1, h1, g1) truth = test life1 truth
 split :: Int -> [a] -> [[a]]
 split n = takeWhile (not . null) . unfoldr (Just . splitAt n)
 
+-- Test and Truth definitions --
 test0 = grid
    [".0.",
     "..0",
@@ -138,6 +129,7 @@ test4 = grid
 w4 = 5 :: Int
 truth4 = [array ((1,1),(4,5)) [((1,1),True),((1,2),True),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),False),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)]]
 
+-- this function prints the original truth
 printTruth :: Int -> [Board] -> IO ()
 printTruth w gTruth = mapM_ f gTruth
   where f t = do
@@ -148,16 +140,12 @@ printTruth w gTruth = mapM_ f gTruth
 gameOfLife :: Int -> (Int, Int, Board) -> IO ()
 gameOfLife n (w, h, g) = mapM_ f $ take n $ iterate life w h g
   where f g = do
-            -- cls , this instruction is used to clear the screen
             putStrLn "+-+-+-+-+-+-+"
             printGrid w g
-            -- wait 800000 -- this insturction is used to slow down the printing
 
 
 main = do
-       putStrLn "Enter number of generations you want to see: "
-       -- numGen <- getLine
-       -- gameOfLife (read numGen::Int) glider, this is instruction where we ask user to tell us how many generations they want to see
+
        putStrLn "--------------Test 0---------------"
        
        gameOfLife 3 test0
