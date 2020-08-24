@@ -20,15 +20,6 @@ Given a board with m by n cells, each cell has an initial state live (1) or dead
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/GOL.gif">
 </p>
 
-## Team Members
-```
-Kenil Shah
-Urvish Vasani
-Faraaz Kakiwala
-Raj Shrivastava
-Harshit Patel
-```
-
 ## How to run?
 
 ### Basic setup
@@ -44,9 +35,16 @@ Click  [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_
 2. In **Configure the run button** text box, enter ```julia code/julia/GOL.jl```.
 3. Hit **Run** to run the code.
 
-### Run [Haskell implementation]()
+### Run [Haskell implementation](code/haskell/GOL.hs)
 1. select language **Haskell** from the drop down.
 2. In **Configure the run button** text box, enter ```ghc -dynamic code/haskell/GOL.hs && ./code/haskell/GOL```.
 3. Hit **Run** to run the code.
 
-
+## Team Members
+```
+Kenil Shah
+Urvish Vasani
+Faraaz Kakiwala
+Raj Shrivastava
+Harshit Patel
+```
