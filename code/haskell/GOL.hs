@@ -86,7 +86,7 @@ test b1 b2 | b1 /= b2 = putStrLn "Test case failed"
 runTest :: Int -> (Int, Int, Board) -> [Board] -> IO ()
 runTest n (w1, h1, g1) truth = test life1 truth
                                       where 
-                                        life1 = take n $ iterate (life w1 h1) g1
+                                      	life1 = take n $ iterate life w1 h1 g1
                                         
 
 -- splits a subarray from an array  --
@@ -144,9 +144,9 @@ printTruth w gTruth = mapM_ f gTruth
             putStrLn "x-x-x-x-x-x-x"
             printGrid w t
 
--- this function runs the life uptil n generations and prints them one by one
+-- this function generates n generations and prints them one by one
 gameOfLife :: Int -> (Int, Int, Board) -> IO ()
-gameOfLife n (w, h, g) = mapM_ f $ take n $ iterate (life w h) g
+gameOfLife n (w, h, g) = mapM_ f $ take n $ iterate life w h g
   where f g = do
             -- cls , this instruction is used to clear the screen
             putStrLn "+-+-+-+-+-+-+"
