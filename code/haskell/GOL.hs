@@ -70,37 +70,130 @@ grid l = (width, height, a)
         g '.' = False
         g _   = True
  
--- printGrid func takes a board converts it into a map or a grid which is basically an array of arrays representing map, and then prints it line by line-- 
+-- printGrid func takes a board converts it into a map or a grid which is basically an array of arrays representing map, and then prints it line by line -- 
 printGrid :: Int -> Board -> IO ()
 printGrid width = mapM_ f . split width . elems
   where f = putStrLn . map g
         g False = '.'
         g _     = 'O'
 
+-- this function gets two array of boards where the board at index i in the array is ith generation of that test case, the other board is ground truth, it checks if both are equal --
+test :: [Board] -> [Board] -> IO ()
+test b1 b2 | b1 /= b2 = putStrLn "Test case failed"
+           | b1 == b2 = putStrLn "Test case passed"
+
+-- runTest function takes true life and a grid, it generates output for grid using life function and runs test on it --
+runTest :: Int -> (Int, Int, Board) -> [Board] -> IO ()
+runTest n (w1, h1, g1) truth = test life1 truth
+                                      where 
+                                        life1 = take n $ iterate (life w1 h1) g1
+                                        
+
 -- splits a subarray from an array  --
 split :: Int -> [a] -> [[a]]
 split n = takeWhile (not . null) . unfoldr (Just . splitAt n)
 
-glider = grid
-   ["............",
-    "............",
-    "............",
-    ".......OOO..",
-    "............",
-    "............",
-    "............"]
+test0 = grid
+   [".0.",
+    "..0",
+    "000",
+    "..."]
+
+w0 = 3 :: Int
+truth0 = [array ((1,1),(4,3)) [((1,1),False),((1,2),True),((1,3),False),((2,1),False),((2,2),False),((2,3),True),((3,1),True),((3,2),True),((3,3),True),((4,1),False),((4,2),False),((4,3),False)],array ((1,1),(4,3)) [((1,1),False),((1,2),False),((1,3),False),((2,1),True),((2,2),False),((2,3),True),((3,1),False),((3,2),True),((3,3),True),((4,1),False),((4,2),True),((4,3),False)],array ((1,1),(4,3)) [((1,1),False),((1,2),False),((1,3),False),((2,1),False),((2,2),False),((2,3),True),((3,1),True),((3,2),False),((3,3),True),((4,1),False),((4,2),True),((4,3),True)]]
+
+test1 = grid
+   ["00.0.",
+    "...0",
+    "0.00",
+    ".0.."]
+
+w1 = 5 :: Int
+truth1 = [array ((1,1),(4,5)) [((1,1),True),((1,2),True),((1,3),False),((1,4),True),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((2,5),True),((3,1),False),((3,2),True),((3,3),True),((3,4),False),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),True),((1,4),True),((1,5),True),((2,1),True),((2,2),False),((2,3),False),((2,4),False),((2,5),True),((3,1),False),((3,2),False),((3,3),True),((3,4),False),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),False),((1,4),True),((1,5),True),((2,1),False),((2,2),True),((2,3),True),((2,4),False),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),False),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)]]
+
+test2 = grid
+   ["0..0",
+    "00.0",
+    "0..0",
+    ".00."]
+
+w2 = 4 :: Int
+truth2 = [array ((1,1),(4,4)) [((1,1),True),((1,2),False),((1,3),False),((1,4),True),((2,1),True),((2,2),True),((2,3),False),((2,4),True),((3,1),True),((3,2),False),((3,3),False),((3,4),True),((4,1),False),((4,2),True),((4,3),True),((4,4),False)],array ((1,1),(4,4)) [((1,1),True),((1,2),True),((1,3),True),((1,4),False),((2,1),True),((2,2),True),((2,3),False),((2,4),True),((3,1),True),((3,2),False),((3,3),False),((3,4),True),((4,1),False),((4,2),True),((4,3),True),((4,4),False)],array ((1,1),(4,4)) [((1,1),True),((1,2),False),((1,3),True),((1,4),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((3,1),True),((3,2),False),((3,3),False),((3,4),True),((4,1),False),((4,2),True),((4,3),True),((4,4),False)]]
+    
+test3 = grid
+   ["0..",
+    "..0",
+    "0..",
+    "..0"]
+
+w3 = 3 :: Int
+truth3 = [array ((1,1),(4,3)) [((1,1),True),((1,2),False),((1,3),False),((2,1),False),((2,2),False),((2,3),True),((3,1),True),((3,2),False),((3,3),False),((4,1),False),((4,2),False),((4,3),True)],array ((1,1),(4,3)) [((1,1),False),((1,2),False),((1,3),False),((2,1),False),((2,2),True),((2,3),False),((3,1),False),((3,2),True),((3,3),False),((4,1),False),((4,2),False),((4,3),False)],array ((1,1),(4,3)) [((1,1),False),((1,2),False),((1,3),False),((2,1),False),((2,2),False),((2,3),False),((3,1),False),((3,2),False),((3,3),False),((4,1),False),((4,2),False),((4,3),False)]]
+    
+test4 = grid
+   ["00...",
+    "....0",
+    "...00",
+    "....."]  
+
+w4 = 5 :: Int
+truth4 = [array ((1,1),(4,5)) [((1,1),True),((1,2),True),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),False),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)],array ((1,1),(4,5)) [((1,1),False),((1,2),False),((1,3),False),((1,4),False),((1,5),False),((2,1),False),((2,2),False),((2,3),False),((2,4),True),((2,5),True),((3,1),False),((3,2),False),((3,3),False),((3,4),True),((3,5),True),((4,1),False),((4,2),False),((4,3),False),((4,4),False),((4,5),False)]]
+
+printTruth :: Int -> [Board] -> IO ()
+printTruth w gTruth = mapM_ f gTruth
+  where f t = do
+            putStrLn "+-+-+-+-+-+-+"
+            printGrid w t
 
 -- this function runs the life uptil n generations and prints them one by one
 gameOfLife :: Int -> (Int, Int, Board) -> IO ()
 gameOfLife n (w, h, g) = mapM_ f $ take n $ iterate (life w h) g
   where f g = do
-            cls
-            putStrLn "------------------------------"
+            -- cls , this instruction is used to clear the screen
+            putStrLn "+-+-+-+-+-+-+"
             printGrid w g
-            wait 800000
+            -- wait 800000 -- this insturction is used to slow down the printing
 
 
 main = do
        putStrLn "Enter number of generations you want to see: "
-       numGen <- getLine
-       gameOfLife (read numGen::Int) glider
+       -- numGen <- getLine
+       -- gameOfLife (read numGen::Int) glider, this is instruction where we ask user to tell us how many generations they want to see
+       putStrLn "--------------Test 0---------------"
+       
+       gameOfLife 3 test0
+       
+       putStrLn "--------Truth--------"
+       printTruth w0 truth0
+       runTest 3 test0 truth0
+
+       putStrLn "--------------Test 1---------------"
+       
+       gameOfLife 3 test1
+
+       putStrLn "--------Truth--------"
+       printTruth w1 truth1
+       runTest 3 test1 truth1
+
+       putStrLn "--------------Test 2---------------"
+       
+       gameOfLife 3 test2
+       
+       putStrLn "--------Truth--------"
+       printTruth w2 truth2
+       runTest 3 test2 truth2
+
+       putStrLn "--------------Test 3---------------"
+       
+       gameOfLife 3 test3
+       
+       putStrLn "--------Truth--------"
+       printTruth w3 truth3
+       runTest 3 test3 truth3
+
+       putStrLn "--------------Test 4---------------"
+       
+       gameOfLife 3 test4
+
+       putStrLn "--------Truth--------"
+       printTruth w4 truth4
+       runTest 3 test4 truth4
