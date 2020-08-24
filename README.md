@@ -34,6 +34,7 @@ Click  [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_
 1. select language **Julia** from the drop down.
 2. In **Configure the run button** text box, enter ```julia code/julia/GOL.jl```.
 3. Hit **Run** to run the code.
+4. **6 test cases** have been added to the implementation and debugger would need to resolve 3 bugs inorder to solve them.
 
 ### Run [Haskell implementation](code/haskell/GOL.hs)
 1. select language **Haskell** from the drop down.
