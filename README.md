@@ -4,7 +4,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3996733.svg)](https://doi.org/10.5281/zenodo.3996733)
 [![Build Status](https://travis-ci.org/urvishvasani/HW_2_3_Game_of_Life.svg?branch=master)](https://travis-ci.org/urvishvasani/HW_2_3_Game_of_Life)
 
-**Hw-02 Repo (Game of Life)**
+##**Hw-02 Repo (Game of Life)**
+
+![Alt Text](https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/GOL.gif)
+
 
 ## Team Members
 ```
