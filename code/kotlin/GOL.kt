@@ -10,7 +10,7 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
 
     init {
         for (cell in activeCells) {
-            universe[cell.get(0)][cell.get(1)] = 1
+            universe[cell[0]][cell[1]] = 1
         }
     }
 
@@ -47,11 +47,11 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
                 activeNeighbors = countActiveNeighbour(i,j)
                 if (universe[i][j]==1){
                     if (activeNeighbors < 2 || activeNeighbors > 3){
-                        universe[i][j] = 3
+                        universe[i][j] = 2
                     }
                 } else if (universe[i][j]==0) {
                     if (activeNeighbors == 3){
-                        universe[i][j] = 2
+                        universe[i][j] = 3
                     }
                 }
             }
@@ -98,8 +98,8 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
      */
     fun printUniverse() {
         for (row in universe) {
-            for (colum in row) {
-                print("$colum ")
+            for (column in row) {
+                print("$column ")
             }
             println()
         }
@@ -116,7 +116,7 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
         compareTo.printUniverse()
         for (i in 0..rows-1) {
             for (j in 0..cols - 1) {
-                if (universe[i][j] != compareTo.universe[i][j]){
+                if (universe[i][j] != compareTo[i][j]){
                     println("Assertion failed.")
                     return false
                 }

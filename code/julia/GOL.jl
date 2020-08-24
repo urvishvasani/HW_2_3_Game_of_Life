@@ -10,7 +10,7 @@ function count_alive :- Calculates the number of alive neighbours present for a 
 Input:
     board :- 2D Grid/board
     row :- x coordinate of the current cell
-    column :- y coordinate ofthe current cell
+    column :- y coordinate of the current cell
 
 Output:
     count :- Total number of alive neighbours of the current cell
@@ -26,7 +26,7 @@ function count_alive(board,row,column)
             count += 1
         end
     end
-    return count
+
 end
 
 
@@ -68,12 +68,14 @@ function gameOfLife(board,generations)
     return new_board
 end
 
-function print_as_grid(input_array,output_array,expected,count,generations)
+function print_as_grid(input_array,output_array,expected,count,generations,failed)
+    println("********************************************************")
+    println("Test Case:-",count)
     if output_array==expected
         println("Test Case ", count," has passed")
     else
         println("Test Case ", count," has failed")
-        faulty+=1
+        append!(failed,count)
     end
 
     println("Input Array ===> Output Array ===> Expected Output")
@@ -82,7 +84,6 @@ function print_as_grid(input_array,output_array,expected,count,generations)
     println(input_array[2]," ===>",output_array[2]," ===>",expected[2])
     println(input_array[3]," ===>",output_array[3]," ===>",expected[3])
     println(input_array[4]," ===>",output_array[4]," ===>",expected[4])
-
     println("********************************************************")
 end
 
@@ -97,19 +98,30 @@ function run_test_cases()
     expected4 = [[0,0,0],[0,1,0],[0,1,0],[0,0,0]]
     input5 = [[1,1,0,0,0],[0,0,0,0,1],[0,0,0,1,1],[0,0,0,0,0]]
     expected5 = [[0,0,0,0,0],[0,0,0,1,1],[0,0,0,1,1],[0,0,0,0,0]]
-    
+    input6 = [[0,1,0],[0,1,0],[0,1,0],[0,0,0]]
+    expected6 = [[0,1,0],[0,1,0],[0,1,0],[0,0,0]]
+
+    failed = []
     output1 = gameOfLife(input1,1)
     output2 = gameOfLife(input2,1)
     output3 = gameOfLife(input3,1)
     output4 = gameOfLife(input4,1)
     output5 = gameOfLife(input5,1)
-    
-    print_as_grid(input1,output1,expected1,1,1)
-    print_as_grid(input2,output2,expected2,2,1)
-    print_as_grid(input3,output3,expected3,3,1)
-    print_as_grid(input4,output4,expected4,4,1)
-    print_as_grid(input5,output5,expected5,5,1)
+    output6 = gameOfLife(input6,2)
 
+    print_as_grid(input1,output1,expected1,1,1,failed)
+    print_as_grid(input2,output2,expected2,2,1,failed)
+    print_as_grid(input3,output3,expected3,3,1,failed)
+    print_as_grid(input4,output4,expected4,4,1,failed)
+    print_as_grid(input5,output5,expected5,5,1,failed)
+    print_as_grid(input6,output6,expected6,6,2,failed)
+    println()
+    if size(failed)[1]==0
+        println("Congratulations, all test Cases Passed")
+    else
+        println("Out of 6 test cases the following test cases failed:-")
+        println(failed)
+    end
 end
 
 run_test_cases()
