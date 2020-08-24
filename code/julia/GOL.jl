@@ -20,7 +20,7 @@ Output:
     count :- Total number of alive neighbours of the current cell
 """
 function count_alive(board,row,column)
-    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [-1 -1], [1 -1], [-1 1]]
+    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [1 -1], [-1 1],[-1,-1]]
     count = 0
     for c in check
         if (row + c[1]) <= 0 || (column + c[2]) <= 0 || (row + c[1]) > size(board)[1] || (column + c[2]) > size(board[1])[1]
@@ -41,35 +41,80 @@ Input:
 Output:
     board :- Next generated cell structure according to the rules
 """
-function gameOfLife(board)
+function gameOfLife(board,generations)
+    new_board = deepcopy(board)
     rows = size(board)
     column = size(board[1])
-    changed = []
-    for i in 1:rows[1]
-        for j in 1:column[1]
-            neighbours = count_alive(board, i, j)
-            println(neighbours," ",i,j)
-            if board[i][j] == 1
-                if neighbours < 2 || neighbours>3
-                    append!(changed,[[i,j]])
-                end
-            else
-                if neighbours==3
-                    append!(changed,[[i,j]])
+    for generation in 1:generations
+        changed = []
+        for i in 1:rows[1]
+            for j in 1:column[1]
+                neighbours = count_alive(new_board, i, j)
+                if new_board[i][j] == 1
+                    if neighbours < 2 || neighbours>3
+                        append!(changed,[[i,j]])
+                    end
+                else
+                    if neighbours==3
+                        append!(changed,[[i,j]])
+                    end
                 end
             end
         end
-    end
+
+        for toggle_index in changed
+            x = toggle_index[1]
+            y = toggle_index[2]
+            new_board[x][y]  = 1 - new_board[x][y]
+        end
     
-    for toggle_index in changed
-        x = toggle_index[1]
-        y = toggle_index[2]
-        board[x][y]  = 1 - board[x][y]
     end
-    return board
+    return new_board
 end
 
-#function run_test_cases()
-print(gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]]))
+function print_as_grid(input_array,output_array,expected,count,generations)
+    if output_array==expected
+        println("Test Case ", count," has passed")
+    else
+        println("Test Case ", count," has failed")
+        faulty+=1
+    end
 
+    println("Input Array ===> Output Array ===> Expected Output")
+    println("This test case has ",generations," generations")
+    println(input_array[1]," ===>",output_array[1]," ===>",expected[1])
+    println(input_array[2]," ===>",output_array[2]," ===>",expected[2])
+    println(input_array[3]," ===>",output_array[3]," ===>",expected[3])
+    println(input_array[4]," ===>",output_array[4]," ===>",expected[4])
+
+    println("********************************************************")
+end
+
+function run_test_cases()
+    input1 = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+    expected1 = [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+    input2 = [[1,1,0,1],[0,0,0,1],[1,0,1,1],[0,1,0,0]]
+    expected2 = [[0,0,1,0],[1,0,0,1],[0,1,1,1],[0,1,1,0]]
+    input3 = [[1,0,0,1],[1,1,0,1],[1,0,0,1],[0,1,1,0]]
+    expected3 = [[1,1,1,0],[1,1,0,1],[1,0,0,1],[0,1,1,0]]
+    input4 = [[1,0,0],[0,0,1],[1,0,0],[0,0,1]]
+    expected4 = [[0,0,0],[0,1,0],[0,1,0],[0,0,0]]
+    input5 = [[1,1,0,0,0],[0,0,0,0,1],[0,0,0,1,1],[0,0,0,0,0]]
+    expected5 = [[0,0,0,0,0],[0,0,0,1,1],[0,0,0,1,1],[0,0,0,0,0]]
+    
+    output1 = gameOfLife(input1,1)
+    output2 = gameOfLife(input2,1)
+    output3 = gameOfLife(input3,1)
+    output4 = gameOfLife(input4,1)
+    output5 = gameOfLife(input5,1)
+    
+    print_as_grid(input1,output1,expected1,1,1)
+    print_as_grid(input2,output2,expected2,2,1)
+    print_as_grid(input3,output3,expected3,3,1)
+    print_as_grid(input4,output4,expected4,4,1)
+    print_as_grid(input5,output5,expected5,5,1)
+
+end
+
+run_test_cases()
 
