@@ -141,7 +141,7 @@ fun main(args: Array<String>) {
             arrayOf(1, 1),
             arrayOf(2, 1)
     )).gameOfLife(2)
-    println("output:")
+    println("output after 2 generations:")
     universe0_input.printUniverse()
     val universe0_expected = GameOfLifeUniverse(4,3, arrayOf(
             arrayOf(0, 1),
@@ -161,7 +161,7 @@ fun main(args: Array<String>) {
             arrayOf(2, 1),
             arrayOf(2, 2)
     )).gameOfLife(1)
-    println("output:")
+    println("output after 1 generation:")
     universe1_input.printUniverse()
     val universe1_expected = GameOfLifeUniverse(4,3, arrayOf(
             arrayOf(1, 0),
@@ -185,7 +185,7 @@ fun main(args: Array<String>) {
             arrayOf(2, 3),
             arrayOf(3, 1)
     )).gameOfLife(1)
-    println("output:")
+    println("output after 1 generation:")
     universe2_input.printUniverse()
     val universe2_expected = GameOfLifeUniverse(4,4, arrayOf(
             arrayOf(0, 2),
@@ -213,7 +213,7 @@ fun main(args: Array<String>) {
             arrayOf(3, 1),
             arrayOf(3, 2)
     )).gameOfLife(1)
-    println("output:")
+    println("output after 1 generation:")
     universe3_input.printUniverse()
     val universe3_expected = GameOfLifeUniverse(4,4, arrayOf(
             arrayOf(0, 0),
@@ -238,7 +238,7 @@ fun main(args: Array<String>) {
             arrayOf(2, 0),
             arrayOf(3, 2)
     )).gameOfLife(1)
-    println("output:")
+    println("output after 1 generation:")
     universe4_input.printUniverse()
     val universe4_expected = GameOfLifeUniverse(4,3, arrayOf(
             arrayOf(1, 1),
@@ -256,7 +256,7 @@ fun main(args: Array<String>) {
             arrayOf(2, 3),
             arrayOf(2, 4)
     )).gameOfLife(1)
-    println("output:")
+    println("output after 1 generation:")
     universe5_input.printUniverse()
     val universe5_expected = GameOfLifeUniverse(4,5, arrayOf(
             arrayOf(1, 3),
