@@ -131,6 +131,9 @@ fun main(args: Array<String>) {
 
     var test_case_status = arrayOf<Boolean>()
 
+    println()
+    println("Tests started running......")
+    println()
     println("Test case 0:")
     println("-------------")
     val universe0_input = GameOfLifeUniverse(4,3, arrayOf(
