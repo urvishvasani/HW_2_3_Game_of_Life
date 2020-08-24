@@ -17,10 +17,10 @@ Harshit Patel
 
 ## How to run?
 
-#### Basic setup
+### Basic setup
 Click [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_of_Life)](https://repl.it/github/urvishvasani/HW_2_3_Game_of_Life) to clone and run this project on an online IDE [repl it](https://repl.it/repls/AjarGrubbyProgramminglanguage#README.md).
 
-#### Run [kotlin implementation](code/kotlin/GOL.kt)
+### Run [kotlin implementation](code/kotlin/GOL.kt)
 1. select language **Kotlin** from the drop down.
 2. In **Configure the run button** text box, enter ```kotlinc -d main.jar code/kotlin/GOL.kt && kotlin -classpath main.jar GOLKt```.
 3. Hit **Run** to run the code.
