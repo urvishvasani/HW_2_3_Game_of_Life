@@ -47,11 +47,11 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
                 activeNeighbors = countActiveNeighbour(i,j)
                 if (universe[i][j]==1){
                     if (activeNeighbors < 2 || activeNeighbors > 3){
-                        universe[i][j] = 2
+                        universe[i][j] = 3
                     }
                 } else if (universe[i][j]==0) {
                     if (activeNeighbors == 3){
-                        universe[i][j] = 3
+                        universe[i][j] = 2
                     }
                 }
             }
@@ -80,17 +80,17 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
                 intArrayOf(-1,-1),
                 intArrayOf(1,-1),
                 intArrayOf(-1,1))
-        var activeNeighboutCount = 0
+        var activeNeighbourCount = 0
         for (neighbour in neighbours){
             val neighbour_x = row + neighbour.get(0)
             val neighbour_y = col + neighbour.get(1)
             if (neighbour_x >= 0 && neighbour_y >= 0 && neighbour_x < rows && neighbour_y < cols ){
-                if (universe[neighbour_x][neighbour_y] == 1 || universe[neighbour_x][neighbour_y] == 2){
-                    activeNeighboutCount = activeNeighboutCount + 1
+                if (universe[neighbour_x][neighbour_y] == 1){
+                    activeNeighbourCount += 1
                 }
             }
         }
-        return activeNeighboutCount
+        return activeNeighbourCount
     }
 
     /**
@@ -271,5 +271,4 @@ fun main(args: Array<String>) {
     test_case_status.forEachIndexed { index, b ->
         println("Test Case $index : ${if (b) "Passed" else "Failed"} ")
     }
-
 }
