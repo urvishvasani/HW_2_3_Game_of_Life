@@ -4,10 +4,6 @@
 # Any live cell with more than three live neighbors dies, as if by over-population..
 # Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-#TODO :- 
-#    1] Write a function for test cases (Input, Output)
-#    2] Commandline parameter passing 
-#    3] Run for x iterations
 
 """
 function count_alive :- Calculates the number of alive neighbours present for a cell(x,y) on the board
@@ -20,7 +16,7 @@ Output:
     count :- Total number of alive neighbours of the current cell
 """
 function count_alive(board,row,column)
-    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [1 -1], [-1 1],[-1,-1]]
+    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [1 -1], [-1 1],[0,0]]
     count = 0
     for c in check
         if (row + c[1]) <= 0 || (column + c[2]) <= 0 || (row + c[1]) > size(board)[1] || (column + c[2]) > size(board[1])[1]
@@ -50,7 +46,7 @@ function gameOfLife(board,generations)
         for i in 1:rows[1]
             for j in 1:column[1]
                 neighbours = count_alive(new_board, i, j)
-                if new_board[i][j] == 1
+                if board[i][j] == 1
                     if neighbours < 2 || neighbours>3
                         append!(changed,[[i,j]])
                     end
