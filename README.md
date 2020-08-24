@@ -16,10 +16,21 @@ Harshit Patel
 ```
 
 ## How to run?
-```
-1) Click on the repl badge available in README.md
 
-2) Change the language to **Julia** and use **julia code/julia/GOL.jl** as run command.
+#### Basic setup
+Click [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_of_Life)](https://repl.it/github/urvishvasani/HW_2_3_Game_of_Life) to clone and run this project on an online IDE [repl it](https://repl.it/repls/AjarGrubbyProgramminglanguage#README.md).
 
-3) Change the language to **Kotlin** and use **kotlinc -d main.jar code/kotlin/GOL.kt && kotlin -classpath main.jar GOLKt** as run command.
-```
+#### Run [kotlin implementation](code/kotlin/GOL.kt)
+1. select language **Kotlin** from the drop down.
+2. In **Configure the run button** text box, enter ```kotlinc -d main.jar code/kotlin/GOL.kt && kotlin -classpath main.jar GOLKt```.
+3. Hit **Run** to run the code.
+
+### Run [Julia implementation](code/julia/GOL.jl)
+1. select language **Julia** from the drop down.
+2. In **Configure the run button** text box, enter ```julia code/julia/GOL.jl``` and hit **done**.
+3. Hit **Run** to run the code.
+
+### Run [Haskell implementation]()
+1. select language **Haskell** from the drop down.
+
+
