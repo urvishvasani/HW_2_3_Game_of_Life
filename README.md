@@ -27,7 +27,7 @@ Click [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_o
 
 ### Run [Julia implementation](code/julia/GOL.jl)
 1. select language **Julia** from the drop down.
-2. In **Configure the run button** text box, enter ```julia code/julia/GOL.jl``` and hit **done**.
+2. In **Configure the run button** text box, enter ```julia code/julia/GOL.jl```.
 3. Hit **Run** to run the code.
 
 ### Run [Haskell implementation]()
