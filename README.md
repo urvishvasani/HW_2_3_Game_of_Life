@@ -46,5 +46,7 @@ Click  [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_
 
 ### Run [Haskell implementation]()
 1. select language **Haskell** from the drop down.
+2. In **Configure the run button** text box, enter ```ghc - dynamic code/haskell/GOL.hs && ./code/haskell/GOL```.
+3. Hit **Run** to run the code.
 
 

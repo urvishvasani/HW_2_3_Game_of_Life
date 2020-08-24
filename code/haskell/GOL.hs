@@ -97,7 +97,7 @@ gameOfLife n (w, h, g) = mapM_ f $ take n $ iterate (life w h) g
             cls
             putStrLn "------------------------------"
             printGrid w g
-            wait 8000000
+            wait 800000
 
 
 main = do
