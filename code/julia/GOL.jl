@@ -10,7 +10,7 @@ function count_alive :- Calculates the number of alive neighbours present for a 
 Input:
     board :- 2D Grid/board
     row :- x coordinate of the current cell
-    column :- y coordinate ofthe current cell
+    column :- y coordinate of the current cell
 
 Output:
     count :- Total number of alive neighbours of the current cell
@@ -26,7 +26,7 @@ function count_alive(board,row,column)
             count += 1
         end
     end
-    return count
+
 end
 
 
