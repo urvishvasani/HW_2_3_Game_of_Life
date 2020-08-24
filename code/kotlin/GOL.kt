@@ -35,26 +35,35 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
      *  2. Any live cell with two or three live neighbors lives on to the next generation.
      *  3. Any live cell with more than three live neighbors dies, as if by over-population.
      *  4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+     *
+     *  In order to make the updates in place, values which needs to be updated to 0 are updated temporarily with 2
+     *  and values which needs to be updated to 1 are updated temporarily with 3.
+     *  At the end of this function, these values are set back to the values that are intended.
      */
     fun generateNext(){
         var activeNeighbors: Int
-        var changedCells: Array<Array<Int>> = arrayOf<Array<Int>>()
         for (i in 0..rows-1){
             for (j in 0..cols-1){
                 activeNeighbors = countActiveNeighbour(i,j)
                 if (universe[i][j]==1){
                     if (activeNeighbors < 2 || activeNeighbors > 3){
-                        changedCells = changedCells + arrayOf(i,j)
+                        universe[i][j] = 2
                     }
-                } else{
+                } else if (universe[i][j]==0) {
                     if (activeNeighbors == 3){
-                        changedCells = changedCells + arrayOf(i,j)
+                        universe[i][j] = 3
                     }
                 }
             }
         }
-        for (changedCell in changedCells) {
-            universe[changedCell.get(0)][changedCell.get(1)] = 1 - universe[changedCell.get(0)][changedCell.get(1)]
+        for (i in 0..rows-1){
+            for (j in 0..cols-1){
+                if (universe[i][j]==2){
+                    universe[i][j] = 0
+                } else if (universe[i][j]==3) {
+                    universe[i][j] = 1
+                }
+            }
         }
     }
 
@@ -76,7 +85,7 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
             val neighbour_x = row + neighbour.get(0)
             val neighbour_y = col + neighbour.get(1)
             if (neighbour_x >= 0 && neighbour_y >= 0 && neighbour_x < rows && neighbour_y < cols ){
-                if (universe[neighbour_x][neighbour_y] == 1){
+                if (universe[neighbour_x][neighbour_y] == 1 || universe[neighbour_x][neighbour_y] == 2){
                     activeNeighboutCount = activeNeighboutCount + 1
                 }
             }
@@ -120,13 +129,15 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
 
 fun main(args: Array<String>) {
 
+    var test_case_status = arrayOf<Boolean>()
+
     println("Test case 0:")
     println("-------------")
     val universe0_input = GameOfLifeUniverse(4,3, arrayOf(
             arrayOf(0, 1),
             arrayOf(1, 1),
             arrayOf(2, 1)
-    )).gameOfLife(4)
+    )).gameOfLife(2)
     println("output:")
     universe0_input.printUniverse()
     val universe0_expected = GameOfLifeUniverse(4,3, arrayOf(
@@ -134,8 +145,9 @@ fun main(args: Array<String>) {
             arrayOf(1, 1),
             arrayOf(2, 1)
     ))
-    universe0_input.assertEqualsUniverse(universe0_expected)
+    test_case_status += universe0_input.assertEqualsUniverse(universe0_expected)
     println()
+
 
     println("Test case 1:")
     println("-------------")
@@ -155,7 +167,7 @@ fun main(args: Array<String>) {
             arrayOf(2, 2),
             arrayOf(3, 1)
     ))
-    universe1_input.assertEqualsUniverse(universe1_expected)
+    test_case_status += universe1_input.assertEqualsUniverse(universe1_expected)
     println()
 
     println("Test case 2:")
@@ -182,7 +194,7 @@ fun main(args: Array<String>) {
             arrayOf(3, 1),
             arrayOf(3, 2)
     ))
-    universe2_input.assertEqualsUniverse(universe2_expected)
+    test_case_status += universe2_input.assertEqualsUniverse(universe2_expected)
     println()
 
     println("Test case 3:")
@@ -212,7 +224,7 @@ fun main(args: Array<String>) {
             arrayOf(3, 1),
             arrayOf(3, 2)
     ))
-    universe3_input.assertEqualsUniverse(universe3_expected)
+    test_case_status += universe3_input.assertEqualsUniverse(universe3_expected)
     println()
 
     println("Test case 4:")
@@ -229,7 +241,7 @@ fun main(args: Array<String>) {
             arrayOf(1, 1),
             arrayOf(2, 1)
     ))
-    universe4_input.assertEqualsUniverse(universe4_expected)
+    test_case_status += universe4_input.assertEqualsUniverse(universe4_expected)
     println()
 
     println("Test case 5:")
@@ -249,7 +261,12 @@ fun main(args: Array<String>) {
             arrayOf(2, 3),
             arrayOf(2, 4)
     ))
-    universe5_input.assertEqualsUniverse(universe5_expected)
+    test_case_status += universe5_input.assertEqualsUniverse(universe5_expected)
     println()
+
+    println("Summary of test cases:")
+    test_case_status.forEachIndexed { index, b ->
+        println("Test Case $index : ${if (b) "Passed" else "Failed"} ")
+    }
 
 }
