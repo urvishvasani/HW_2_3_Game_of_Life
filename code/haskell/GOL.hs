@@ -34,7 +34,7 @@ life :: Int -> Int -> Board -> Board
 life w h old =
     listArray b (map f (range b)) -- using current board, and rules of gol advance by i generation and store it at ith place in an array 
   where b@((y1,x1),(y2,x2)) = bounds old
-        f (y, x) = ( c && (n == 2 || n == 3) ) || ( not c && n == 3 ) -- check number of neighbors
+        f (x, y) = ( c && (n == 2 || n == 3) ) || ( not c && n == 3 ) -- check number of neighbors
           where c = get x y
                 {- n = count number of neighbors that are alive where neighbors are at 
                       (x-1, y-1),
@@ -141,7 +141,7 @@ truth4 = [array ((1,1),(4,5)) [((1,1),True),((1,2),True),((1,3),False),((1,4),Fa
 printTruth :: Int -> [Board] -> IO ()
 printTruth w gTruth = mapM_ f gTruth
   where f t = do
-            putStrLn "+-+-+-+-+-+-+"
+            putStrLn "x-x-x-x-x-x-x"
             printGrid w t
 
 -- this function runs the life uptil n generations and prints them one by one
