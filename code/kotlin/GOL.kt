@@ -1,5 +1,10 @@
-
-class GameOfLifeUniverse( val rows: Int, val cols: Int, activeCells: Array<Array<Int>>) {
+/**
+ * GameOfLifeUniverse encapsulates universe and few methods to implement Conway's Game of Life.
+ * [rows] and [cols] defines the size of the universe.
+ * [activeCells] are coordinates of the cells which are alive initially.
+ * [universe] is a 2 dimensional grid where each cell can have values 0 or 1. 1 is the cell is alive and 0 otherwise.
+ */
+class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<Array<Int>>) {
 
     var universe = Array(rows) { IntArray(cols) }
 
@@ -9,59 +14,34 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, activeCells: Array<Array
         }
     }
 
-    fun printUniverse() {
-        for (row in universe) {
-            for (colum in row) {
-                print("$colum ")
-            }
-            println()
+    /**
+     * Entry point for the Game of Life. Evolves universe with [numOfGenerations] generations and returns same object.
+     */
+    fun gameOfLife(numOfGenerations: Int): GameOfLifeUniverse {
+        println("Initial state of universe:")
+        printUniverse()
+        for (i in 0..numOfGenerations-1){
+            generateNext()
+            //println("after iteration ${i+1}, this is the state of universe:")
+            //printUniverse()
         }
+        return this
     }
 
-    fun assertEqualsUniverse(compareTo: GameOfLifeUniverse): Boolean{
-        println("Expected state of universe:")
-        compareTo.printUniverse()
-        for (i in 0..rows-1) {
-            for (j in 0..cols - 1) {
-                if (universe[i][j] != compareTo.universe[i][j]){
-                    println("Assertion failed.")
-                    return false
-                }
-            }
-        }
-        println("Assertion passed.")
-        return true
-    }
-
-    fun neighbourActiveCount(row: Int, col: Int): Int{
-        val neighbours = arrayOf(
-            intArrayOf(0,1),
-            intArrayOf(1,0),
-            intArrayOf(1,1),
-            intArrayOf(0,-1),
-            intArrayOf(-1,0),
-            intArrayOf(-1,-1),
-            intArrayOf(1,-1),
-            intArrayOf(-1,1))
-        var activeNeighboutCount = 0
-        for (neighbour in neighbours){
-            val neighbour_x = row + neighbour.get(0)
-            val neighbour_y = col + neighbour.get(1)
-            if (neighbour_x >= 0 && neighbour_y >= 0 && neighbour_x < rows && neighbour_y < cols ){
-                if (universe[neighbour_x][neighbour_y] == 1){
-                    activeNeighboutCount = activeNeighboutCount + 1
-                }
-            }
-        }
-        return activeNeighboutCount
-    }
-
+    /**
+     * Produces the next generation from the current state of universe and
+     * updates the same universe object using following rules:
+     *  1. Any live cell with fewer than two live neighbors dies, as if caused by under-population.
+     *  2. Any live cell with two or three live neighbors lives on to the next generation.
+     *  3. Any live cell with more than three live neighbors dies, as if by over-population.
+     *  4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+     */
     fun generateNext(){
         var activeNeighbors: Int
         var changedCells: Array<Array<Int>> = arrayOf<Array<Int>>()
         for (i in 0..rows-1){
             for (j in 0..cols-1){
-                activeNeighbors = neighbourActiveCount(i,j)
+                activeNeighbors = countActiveNeighbour(i,j)
                 if (universe[i][j]==1){
                     if (activeNeighbors < 2 || activeNeighbors > 3){
                         changedCells = changedCells + arrayOf(i,j)
@@ -78,15 +58,63 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, activeCells: Array<Array
         }
     }
 
-    fun gameOfLife(numOfGenerations: Int): GameOfLifeUniverse {
-        println("Initial state of universe:")
-        printUniverse()
-        for (i in 0..numOfGenerations-1){
-            generateNext()
-            //println("after iteration ${i+1}, this is the state of universe:")
-            //printUniverse()
+    /**
+     * Returns the number of active neighbours for the cell identified by [row] and [cols].
+     */
+    fun countActiveNeighbour(row: Int, col: Int): Int{
+        val neighbours = arrayOf(
+                intArrayOf(0,1),
+                intArrayOf(1,0),
+                intArrayOf(1,1),
+                intArrayOf(0,-1),
+                intArrayOf(-1,0),
+                intArrayOf(-1,-1),
+                intArrayOf(1,-1),
+                intArrayOf(-1,1))
+        var activeNeighboutCount = 0
+        for (neighbour in neighbours){
+            val neighbour_x = row + neighbour.get(0)
+            val neighbour_y = col + neighbour.get(1)
+            if (neighbour_x >= 0 && neighbour_y >= 0 && neighbour_x < rows && neighbour_y < cols ){
+                if (universe[neighbour_x][neighbour_y] == 1){
+                    activeNeighboutCount = activeNeighboutCount + 1
+                }
+            }
         }
-        return this
+        return activeNeighboutCount
+    }
+
+    /**
+     * displays the universe associated with this GameOfLifeUniverse object.
+     */
+    fun printUniverse() {
+        for (row in universe) {
+            for (colum in row) {
+                print("$colum ")
+            }
+            println()
+        }
+    }
+
+    /**
+     * Compares the universe associated with this object to the universe of the
+     * [compareTo] object for the equality.
+     *
+     * returns true if both universe are equal and false otherwise.
+     */
+    fun assertEqualsUniverse(compareTo: GameOfLifeUniverse): Boolean{
+        println("Expected state of universe:")
+        compareTo.printUniverse()
+        for (i in 0..rows-1) {
+            for (j in 0..cols - 1) {
+                if (universe[i][j] != compareTo.universe[i][j]){
+                    println("Assertion failed.")
+                    return false
+                }
+            }
+        }
+        println("Assertion passed.")
+        return true
     }
 }
 
