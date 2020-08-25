@@ -44,11 +44,11 @@ Click  [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_
 ## Script for experimentation
 As part of this homework, we have introduced 2 bugs in each implementation of Game of Life: Kotlin, Julia and Haskell. 
 
-1. Compilation bug: You'd only be able to run the code successfully once you fix the bux. This bug will be more language specific with an intention to analyze how helpful the compiler error messages are while debugging this type of bugs.
-2. Logical bug: This bug would be more specific to the implementation and once you fix this bug, all tests should be passing. Main purpose behind introducing this type of bug is to understand how readable and friendly the language is.
+1. Compilation bug: You will only be able to run the code successfully once you fix the bug. This bug will be more language specific with an intention to analyze how helpful the compiler error messages are while debugging this type of bugs.
+2. Logical bug: This bug would be more specific to the implementation and once you fix this bug, all tests should pass. Main purpose behind introducing this type of bug is to understand how readable and friendly the language is.
 
-Your goal is to debug each implementation and you will get a total of 30 Mintues to complete the experiment. Detailed steps to run these three implementations can be found [here](#how-to-run) .
-Once you are done with your experiment, fill out this [survey]() which should take around 2-3 minutes. 
+Your goal is to debug each implementation and you will get a total of 30 minutes to complete the experiment. Detailed steps to run these three implementations can be found [here](#how-to-run).
+Once you are done with your experiment, please fill out this [survey](https://docs.google.com/forms/d/e/1FAIpQLSeqIzBdJArD6M2HLxb0OIcmEGPh17jvUO845rWSREaaegU3qQ/viewform?usp=sf_link) which should take around 2-3 minutes. 
 
 ## Observations
 
