@@ -3,6 +3,8 @@
 [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_of_Life)](https://repl.it/github/urvishvasani/HW_2_3_Game_of_Life)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3996733.svg)](https://doi.org/10.5281/zenodo.3996733)
 [![Build Status](https://travis-ci.org/urvishvasani/HW_2_3_Game_of_Life.svg?branch=master)](https://travis-ci.org/urvishvasani/HW_2_3_Game_of_Life)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 This repo has been created for the CSC 510 - Software Engineering Fall 2020 course's Homework 2 and 3 which implements Conway's Game of Life in three programming languages: Kotlin, Julia and Haskell.
 
