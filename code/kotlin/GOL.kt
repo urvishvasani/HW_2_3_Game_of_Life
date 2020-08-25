@@ -116,7 +116,7 @@ class GameOfLifeUniverse( val rows: Int, val cols: Int, val activeCells: Array<A
         compareTo.printUniverse()
         for (i in 0..rows-1) {
             for (j in 0..cols - 1) {
-                if (universe[i][j] != compareTo.universe[i][j]){
+                if (universe[i][j] != compareTo[i][j]){
                     println("Assertion failed.")
                     return false
                 }
