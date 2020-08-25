@@ -41,6 +41,24 @@ Click  [![Run on Repl.it](https://repl.it/badge/github/urvishvasani/HW_2_3_Game_
 2. In **Configure the run button** text box, enter ```ghc -dynamic code/haskell/GOL.hs && ./code/haskell/GOL```.
 3. Hit **Run** to run the code.
 
+## Script for experimentation
+As part of this homework, we have introduced 2 bugs in each implementation of Game of Life: Kotlin, Julia and Haskell. 
+
+1. Compilation bug: You'd only be able to run the code successfully once you fix the bux. This bug will be more language specific with an intention to analyze how helpful the compiler error messages are while debugging this type of bugs.
+2. Logical bug: This bug would be more specific to the implementation and once you fix this bug, all tests should be passing. Main purpose behind introducing this type of bug is to understand how readable and friendly the language is.
+
+Your goal is to debug each implementation and you will get a total of 30 Mintues to complete the experiment. Detailed steps to run these three implementations can be found [here](#how-to-run) .
+Once you are done with your experiment, fill out this [survey]() which should take around 2-3 minutes. 
+
+## Observations
+
+While participants are debugging the code in each language, we will record the following data:
+
+- For each language, were they able to find compilation bug? If yes, were they able to fix the bug completely? How much time did they take?
+- For each language, were they able to find logical bug? If yes, were they able to fix the bug completely? How much time did they take?
+- How useful the traditional backtracking approach was to get to the root cause of the error for each language?
+
+
 ## Team Members
 ```
 Kenil Shah
