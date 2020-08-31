@@ -1,7 +1,7 @@
 # Results
 
 ## Data source
-For this experiment, we used a google form filled ny the participant at the end of the debugging session and our observations while participant is debugging to collect necessary data to draw a conclusion. In particular, following were observed as part of data collection:
+For this experiment, we used a google form filled by the participant at the end of the debugging session and our observations while participant is debugging to collect necessary data to draw a conclusion. In particular, following were observed as part of data collection:
 
 **Data collected from participants**
 1. Familiarity with languages: Kotlin, Julia and Haskell prior this experiment.
@@ -19,6 +19,3 @@ For this experiment, we used a google form filled ny the participant at the end 
    2. Time taken to fix the logical bug.
    3. Used resources (i.e Internet search, Help from the session hosts)
 2. Did the participant use traditional backtracking approach to find the root cause of the error?
-
-
-     
