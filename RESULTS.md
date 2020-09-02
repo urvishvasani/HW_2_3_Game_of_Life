@@ -144,3 +144,10 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 - Moreover, debuggers prefered those languages that had desirable online documentation.
 
 ## Threats to validity
+**Bugs:**
+- After few debugging sessions, we realized that the complexity of bugs should have been similar for each implementation to draw impartial conclusions.
+**Language selection:**
+- Choosing Haskell as one of the implementations did not worked out well for this experiment. It turned out that none of the participants were familiar even a little bit with Haskell before and it is hard for someone to debug all three languages with one being Haskell in a time frame of 30 minutes. 
+- We performed the dry run for our experiment before hosting any session. However, familiarity with Haskell for majority of our team member did not raised any issue mentioned above earlier.
+**Observations:**
+- We allowed participants to debug for more than 30 minutes if they ask for. Although, we completely overlooked the possibility that this can affect the evaluation process.
