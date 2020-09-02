@@ -52,6 +52,7 @@ The above graph showcases the debuggers' familiarity with the three languages.
    - It can be argued that since majority of the debuggers had little or no experience with the 3 languages, this experiment accurately compares debugging and understanding code in 3 alien languages which are fundamentally different.
    
 ### Kotlin
+#### Helpfulness of compilation error message
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/kotlin_compilation_error_message.PNG">
 </p>
@@ -59,20 +60,51 @@ The above graph showcases the debuggers' familiarity with the three languages.
 The above graph shows how effective the compilation error message was for the debugger in the case of Kotlin with 1 being very helpful and 5 being not helpful at all
    - 9/10 debuggers rated this particular question between 1 and 3. Thus, it can be said that for the particular compilation error that we introduced, the error message was somewhat helpful for the debugger to debug
 
+#### Understandability of Kotlin language
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/kotlin_understandability.PNG">
 </p>
 
 The above graph shows the understandability of code in Kotlin for solving the logical error introduced. 
    - As seen in the graph, the data is evenly distributed between helpful and not helpful. Hence, it is not possible to make any good logical inference from this
-   
+
+#### Difficulty level of Kotlin
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/kotlin_difficulty.PNG">
 </p>
 
-The above graphs shows how tough to interpret Kotlin was for the debuggers, with 1 being easy to understand and 5 being very tough
+The above graph shows how tough to interpret Kotlin was for the debuggers, with 1 being easy to understand and 5 being very tough
    - On an average, people found Kotlin to be easy to interpret (4 v/s 3)
    - 3/10 participants were neutral in their assessment of Kotlin's understandability and logical flow
+   
+### Julia
+#### Helpfulness of compilation error message
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/julia_compilation_error_message.PNG">
+</p>
+
+The above graph shows how effective the compilation error message was for the debugger in the case of Julia with 1 being very helpful and 5 being not helpful at all
+   - 5/9 debuggers found the error message to be of little help or of no help at all
+   - 3/9 debuggers found the message to be somewhat helpful with no one finding it to be most helpful
+   - Thus, it can be said that for the error we introduced in Julia, people were finding the error message not much helpful
+
+#### Understandability of Julia language
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/julia_understandability.PNG">
+</p>
+
+The above graph shows the understandability of code in Julia for solving the logical error introduced. 
+   - Majority(5/9) of the participants found Julia to be somewhat easy to understand with 3/9 participants finding it to be a little tougher to interpret
+   - Surprisingly, no one found it to be very easy to understand considering its strong affinity to Python in terms of coding style
+
+#### Difficulty level of Julia
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/julia_difficulty.PNG">
+</p>
+
+The above graph shows how tough to interpret Julia was for the debuggers, with 1 being easy to understand and 5 being very tough
+   - Here as well no one found Julia to be very easy to interpret
+   - 4/9 participants found Julia to be of their liking with the opinion then being largely divided between rest of the choices and only 1 participant rated Julia as very tough to understand
 
 ## Manual observations
 ### Total debugging time for each languages
