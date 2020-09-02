@@ -41,15 +41,26 @@
 
 ## Observations
 <p align="center">
-  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/test.PNG">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/total.PNG">
 </p>
 
-
-1. The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. Major takeaways from the graph are as following :-
+1. The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. 
+   Major takeaways from the graph are as following :-
     - 1/10 people only one person was able to debug code written in Haskell which denotes that Haskell if comparatively difficult to debug.
     - Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
     - 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
 
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/compilation.PNG">
+</p>
+1. The above displayed graphs compares the time taken by the debugger to solve the compilation error in different languages. 
+   Major takeaways from the graph are as following :-
+
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/logical.PNG">
+</p>
+1. The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. 
+   Major takeaways from the graph are as following :-
 ## Conclusions
 
 ## Threats to validity
