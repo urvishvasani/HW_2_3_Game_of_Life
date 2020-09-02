@@ -39,7 +39,17 @@
 6. [Post debugging survey responses](https://docs.google.com/spreadsheets/d/1hthxqCVm0Dbk5fdAo-5iRvSGBeUH_mGzRias4YtLCZo/edit?usp=sharing) to analyse the inputs from participants.
 7. [Observation from the session hosts](https://docs.google.com/spreadsheets/d/1o9TrwybYMLmB7scy8Pe4eh5sLlc40FrnlNM922uLtZE/edit?usp=sharing) to draw conclusions about the hypothesis.
 
-## Observations
+## Observations from responses collected via survey
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/familiarity_with_languages.PNG">
+</p>
+
+1. The above graph showcases the debuggers' familiarity with the three languages. 
+   - Among the three, Kotlin was the most used previously(3) followed by Julia(2).
+   - No one had any prior experience with Haskell.
+   - It can be argued that since majority of the debuggers had little or no experience with the 3 languages, this experiment accurately compares debugging and understanding code in 3 alien languages which are fundamentally different.
+
+## Manual observations
 ### Total debugging time for each languages.
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/total.PNG">
