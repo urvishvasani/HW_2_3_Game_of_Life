@@ -56,9 +56,9 @@
 </p>
 
 The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. Major takeaways from the graph are as following:
-    - Only 1/10 participants were able to debug code written in Haskell which denotes that Haskell is comparatively difficult to debug.
-    - Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
-    - 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
+- Only 1/10 participants were able to debug code written in Haskell which denotes that Haskell is comparatively difficult to debug.
+- Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
+- 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
 
 ### Compilation error debugging time for each languages.
 <p align="center">
@@ -66,9 +66,9 @@ The above displayed graphs compares the overall time taken by the debugger in or
 </p>
 
 The above displayed graphs compares the time taken by the debugger to solve the compilation error in different languages. Major takeaways from the graph are as following:
-    - 3/10 debuggers were able to solve compilation bug for haskell. All the users complaint about ugly console output and not being able to locate the line of error.
-    - Surprisingly, even though a lot of debuggers were used to Kotlin, they took a comparatively higher time for solving the error. We hypothesize that quality of bug introduced would be the reason for this issue.
-    - Debuggers were able to solve the compilation error in Julia very quickly even though they complaint about it having not that great stacktrace. One reason could be the similarity between Julia and Python.
+- 3/10 debuggers were able to solve compilation bug for haskell. All the users complaint about ugly console output and not being able to locate the line of error.
+- Surprisingly, even though a lot of debuggers were used to Kotlin, they took a comparatively higher time for solving the error. We hypothesize that quality of bug introduced would be the reason for this issue.
+- Debuggers were able to solve the compilation error in Julia very quickly even though they complaint about it having not that great stacktrace. One reason could be the similarity between Julia and Python.
 
 ### Logical error debugging time for each languages.
 <p align="center">
@@ -76,7 +76,7 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 </p>
 
 The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. Major takeaways from the graph are as following:
-    - 2/10 debuggers were able to solve logical bug introduced in haskell.
+- 2/10 debuggers were able to solve logical bug introduced in haskell.
   
 ## Conclusions
 - Among three languages people found it hardest to debug Haskell code
