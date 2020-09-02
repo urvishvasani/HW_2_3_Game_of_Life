@@ -69,5 +69,8 @@
     - 2/10 debuggers were able to solve logical bug introduced in haskell.
   
 ## Conclusions
+- Among three languages people found it hardest to debug Haskell code
+- Julia was easiest for people to debug due to its readable syntax and similarities to Python
+- Participants voted Kotlin as the language that they would most likely work on, mostly because they were either familiar with the Kotlin or Java which they found identical to Kotlin.
 
 ## Threats to validity
