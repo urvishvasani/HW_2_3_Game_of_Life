@@ -16,7 +16,7 @@ Output:
     count :- Total number of alive neighbours of the current cell
 """
 function count_alive(board,row,column)
-    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [1 -1], [-1 1],[0,0]]
+    check = [[0 1], [1 0], [1 1], [0 -1], [-1 0], [1 -1], [-1 1],[-1,-1]]
     count = 0
     for c in check
         if (row + c[1]) <= 0 || (column + c[2]) <= 0 || (row + c[1]) > size(board)[1] || (column + c[2]) > size(board[1])[1]
@@ -26,6 +26,8 @@ function count_alive(board,row,column)
             count += 1
         end
     end
+
+    return count
 
 end
 
@@ -46,7 +48,7 @@ function gameOfLife(board,generations)
         for i in 1:rows[1]
             for j in 1:column[1]
                 neighbours = count_alive(new_board, i, j)
-                if board[i][j] == 1
+                if new_board[i][j] == 1
                     if neighbours < 2 || neighbours>3
                         append!(changed,[[i,j]])
                     end
@@ -63,6 +65,8 @@ function gameOfLife(board,generations)
             y = toggle_index[2]
             new_board[x][y]  = 1 - new_board[x][y]
         end
+
+        #print(new_board)
     
     end
     return new_board
@@ -124,5 +128,6 @@ function run_test_cases()
     end
 end
 
+#testing
 run_test_cases()
 
