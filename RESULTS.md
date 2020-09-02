@@ -46,7 +46,7 @@
 
 1. The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. 
    Major takeaways from the graph are as following :-
-    - 1/10 people only one person was able to debug code written in Haskell which denotes that Haskell if comparatively difficult to debug.
+    - Only 1/10 participants were able to debug code written in Haskell which denotes that Haskell is comparatively difficult to debug.
     - Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
     - 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
 
