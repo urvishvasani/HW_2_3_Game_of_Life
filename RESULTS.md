@@ -42,7 +42,7 @@
 ## Observations
 ### Total debugging time for each languages.
 <p align="center">
-  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/total.PNG">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/total.PNG" width="60%">
 </p>
 
 The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. Major takeaways from the graph are as following:
@@ -52,7 +52,7 @@ The above displayed graphs compares the overall time taken by the debugger in or
 
 ### Compilation error debugging time for each languages.
 <p align="center">
-  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/compilation.PNG">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/compilation.PNG"  width="60%" >
 </p>
 
 The above displayed graphs compares the time taken by the debugger to solve the compilation error in different languages. Major takeaways from the graph are as following:
@@ -62,7 +62,7 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 
 ### Logical error debugging time for each languages.
 <p align="center">
-  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/logical.PNG">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/logical.PNG" width="60%" >
 </p>
 
 The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. Major takeaways from the graph are as following:
