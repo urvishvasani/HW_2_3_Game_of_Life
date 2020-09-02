@@ -40,7 +40,15 @@
 7. [Observation from the session hosts](https://docs.google.com/spreadsheets/d/1o9TrwybYMLmB7scy8Pe4eh5sLlc40FrnlNM922uLtZE/edit?usp=sharing) to draw conclusions about the hypothesis.
 
 ## Observations
-add graphs based on the observations
+<p align="center">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/test.png">
+</p>
+
+
+1. The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. Major takeaways from the graph are as following :-
+    - 1/10 people only one person was able to debug code written in Haskell which denotes that Haskell if comparatively difficult to debug.
+    - Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
+    - 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
 
 ## Conclusions
 
