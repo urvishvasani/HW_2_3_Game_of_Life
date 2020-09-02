@@ -53,6 +53,7 @@
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/compilation.PNG">
 </p>
+
 1. The above displayed graphs compares the time taken by the debugger to solve the compilation error in different languages. 
    Major takeaways from the graph are as following :-
     - 3/10 debuggers were able to solve compilation bug for haskell. All the users complaint about ugly console output and not being able to locate the line of error.
@@ -62,6 +63,7 @@
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/logical.PNG">
 </p>
+
 1. The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. 
    Major takeaways from the graph are as following :-
     - 2/10 debuggers were able to solve logical bug introduced in haskell.
