@@ -41,7 +41,7 @@
 
 ## Observations
 <p align="center">
-  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/test.png">
+  <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/test.PNG">
 </p>
 
 
