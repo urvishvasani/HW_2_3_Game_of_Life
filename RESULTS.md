@@ -153,3 +153,4 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 
 **Observations:**
 - We allowed participants to debug for more than 30 minutes if they ask for. Although, we completely overlooked the possibility that this can affect the evaluation process.
+- Session hosts were allowed to provide hints to participants after some threshold time with an intention to let them debug in all languages. However, we later realized that it would be unfair to others who fixed the bug without any help and resulted in skewed conclusion. We tried to fix this issue to some extend by manually considering this factor in our evaluation process.
