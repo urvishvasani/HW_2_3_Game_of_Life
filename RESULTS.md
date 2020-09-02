@@ -134,6 +134,7 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 
 The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. Major takeaways from the graph are as following:
    - 2/10 debuggers were able to solve logical bug introduced in haskell.
+   - It took comparatively less time for each participant to find and fix the logical bug introduced in julia.
   
 ## Conclusions
 - Among three languages people found it hardest to debug Haskell code
