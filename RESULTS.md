@@ -17,17 +17,17 @@
       - Time taken to fix the logical bug.
       - Used resources (i.e Internet search, Help from the session hosts)
    - Whether the participant used traditional backtracking approach to find the root cause of the error?
-5. **Post session survey:** Post debugging session, participants are required to complete the survey in order to record their information about their background knowledge and comments for the debugging session. This survey includes:
+5. **Post session survey:** Post debugging session, participants are required to complete the survey in order to record their information about their background, knowledge and comments for the debugging session. This survey include would include:
    - Familiarity with languages: Kotlin, Julia and Haskell prior this experiment.
-   - For each Kotlin, julia and Haskell debugging experiment:
-      - How helpful compiler's error messages were for Compilation error?
-      - How readable the code is to understand Logical error?
+   - For each (Kotlin, julia and Haskell) debugging experiment:
+      - How helpful compiler's error messages were for compilation error?
+      - How readable the code is to understand logical error?
       - How difficult these bugs were to solve?
       - Which programming language resembles the most to this language?
    - Ranking of relative difficulty from debugging perspective.
    - Which language they are most likely to use in near future?
 
-## Material
+## Materials
 1. [Sign up sheet](https://docs.google.com/spreadsheets/d/1BKcw3SPB2JIysBe6Kw6mkylA_3Ja0o-eQ5TmNMgAZww/edit#gid=0) to participate in our experiment
 2. Implementation with compilation and logical bugs are available at:
    - [Kotlin](code/kotlin/GOL.kt)
@@ -46,10 +46,10 @@
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/familiarity_with_languages.PNG">
 </p>
 
-The above graph showcases the debuggers' familiarity with the three languages. 
+The graph shown above showcases the participants' familiarity with the three languages. 
    - Among the three, Kotlin was the most used previously(3) followed by Julia(2).
    - No one had any prior experience with Haskell.
-   - It can be argued that since majority of the debuggers had little or no experience with the 3 languages, this experiment accurately compares debugging and understanding code in 3 alien languages which are fundamentally different.
+   - It can be argued that since majority of the participants had little or no experience with the 3 languages, this experiment accurately compares debugging and understanding code in 3 alien languages which are fundamentally different.
    
 ### Kotlin
 #### Helpfulness of compilation error message (1 being very helpful and 5 being not helpful at all)
@@ -57,8 +57,8 @@ The above graph showcases the debuggers' familiarity with the three languages.
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/kotlin_compilation_error_message.PNG">
 </p>
 
-The above graph shows how effective the compilation error message was for the debugger in the case of Kotlin
-   - 9/10 debuggers rated this particular question between 1 and 3. Thus, it can be said that for the particular compilation error that we introduced, the error message was somewhat helpful for the debugger to debug
+The above graph shows how effective the compilation error message was for the participants in the case of Kotlin
+   - 9/10 participants rated this particular question between 1 and 3. Thus, it can be said that for the particular compilation error that we introduced, the error message was somewhat helpful for the participants to debug
 
 #### Understandability of Kotlin language (1 being easy to understand and 5 being tough to interpret)
 <p align="center">
@@ -73,7 +73,7 @@ The above graph shows the understandability of code in Kotlin for solving the lo
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/kotlin_difficulty.PNG">
 </p>
 
-The above graph shows how tough to interpret Kotlin was for the debuggers
+The above graph shows how tough to interpret Kotlin was for the participants
    - On an average, people found Kotlin to be easy to interpret (4 v/s 3)
    - 3/10 participants were neutral in their assessment of Kotlin's understandability and logical flow
    
@@ -85,9 +85,9 @@ Amongst the common languages that we were exempted from using, all the participa
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/julia_compilation_error_message.PNG">
 </p>
 
-The above graph shows how effective the compilation error message was for the debugger in the case of Julia
-   - 5/9 debuggers found the error message to be of little help or of no help at all
-   - 3/9 debuggers found the message to be somewhat helpful with no one finding it to be most helpful
+The above graph shows how effective the compilation error message was for the participants in the case of Julia
+   - 5/9 participants found the error message to be of little help or of no help at all
+   - 3/9 participants found the message to be somewhat helpful with no one finding it to be most helpful
    - Thus, it can be said that for the error we introduced in Julia, people were finding the error message not much helpful
 
 #### Understandability of Julia language (1 being easy to understand and 5 being tough to interpret)
@@ -104,7 +104,7 @@ The above graph shows the understandability of code in Julia for solving the log
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/julia_difficulty.PNG">
 </p>
 
-The above graph shows how tough to interpret Julia was for the debuggers
+The above graph shows how tough to interpret Julia was for the participants
    - Here as well no one found Julia to be very easy to interpret
    - 4/9 participants found Julia to be of their liking with the opinion then being largely divided between rest of the choices and only 1 participant rated Julia as very tough to understand
    
@@ -117,9 +117,9 @@ Amongst the common languages that we were exempted from using, all the participa
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/haskell_compilation_error_message.PNG">
 </p>
 
-The above graph shows how effective the compilation error message was for the debugger in the case of Haskell
-   - Majority(6/9) of the debuggers found the error message to be of no use at all
-   - No one found the error message to be helping them with 2 debuggers rating it 3(decent) being the best response
+The above graph shows how effective the compilation error message was for the participants in the case of Haskell
+   - Majority(6/9) of the participants found the error message to be of no use at all
+   - No one found the error message to be helping them with 2 participants rating it 3(decent) being the best response
    
 #### Understandability of Haskell language (1 being easy to understand and 5 being tough to interpret)
 <p align="center">
@@ -135,7 +135,7 @@ The above graph shows the understandability of code in Haskell for solving the l
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/haskell_difficulty.PNG">
 </p>
 
-The above graph shows how tough to interpret Haskell was for the debuggers
+The above graph shows how tough to interpret Haskell was for the participants
    - Everyone found Haskell to be very tough to understand(7/9)
    - No one rated Haskell to be at least decent in terms of difficulty which suggests that more time is required to learn this language
 
@@ -169,7 +169,7 @@ The above pie-chart shows which language among the 3 are the participants most l
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/total.PNG">
 </p>
 
-The above displayed graphs compares the overall time taken by the debugger in order to rectify the bugs in different languages. Major takeaways from the graph are as following:
+The above displayed graphs compares the overall time taken by the participants in order to rectify the bugs in different languages. Major takeaways from the graph are as following:
    - Only 1/10 participants were able to debug code written in Haskell which denotes that Haskell is comparatively difficult to debug.
    - Amount of time taken to debug Kotlin indicates that it has a dependence on users prior knowledge about the language. Users familiar with the language were able to debug quickly.
    - 8/10 users were able to debug the code written in Julia and all of them comparatively took very less time.
@@ -179,18 +179,18 @@ The above displayed graphs compares the overall time taken by the debugger in or
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/compilation.PNG">
 </p>
 
-The above displayed graphs compares the time taken by the debugger to solve the compilation error in different languages. Major takeaways from the graph are as following:
-   - 3/10 debuggers were able to solve compilation bug for haskell. All the users complaint about ugly console output and not being able to locate the line of error.
-   - Surprisingly, even though a lot of debuggers were used to Kotlin, they took a comparatively higher time for solving the error. We hypothesize that quality of bug introduced would be the reason for this issue.
-   - Debuggers were able to solve the compilation error in Julia very quickly even though they complaint about it having not that great stacktrace. One reason could be the similarity between Julia and Python.
+The above displayed graphs compares the time taken by the participants to solve the compilation error in different languages. Major takeaways from the graph are as following:
+   - 3/10 debparticipantsuggers were able to solve compilation bug for haskell. All the users complaint about ugly console output and not being able to locate the line of error.
+   - Surprisingly, even though a lot of participants were used to Kotlin, they took a comparatively higher time for solving the error. We hypothesize that quality of bug introduced would be the reason for this issue.
+   - participants were able to solve the compilation error in Julia very quickly even though they complaint about it having not that great stacktrace. One reason could be the similarity between Julia and Python.
 
 ### Logical error debugging time for each languages
 <p align="center">
   <img src="https://github.com/urvishvasani/HW_2_3_Game_of_Life/blob/master/data/logical.PNG">
 </p>
 
-The above displayed graphs compares the time taken by the debugger to solve the logical error in different languages. Major takeaways from the graph are as following:
-   - 2/10 debuggers were able to solve logical bug introduced in haskell.
+The above displayed graphs compares the time taken by the participants to solve the logical error in different languages. Major takeaways from the graph are as following:
+   - 2/10 participants were able to solve logical bug introduced in haskell.
    - It took comparatively less time for each participant to find and fix the logical bug introduced in julia.
   
 ## Conclusions
@@ -198,7 +198,7 @@ The above displayed graphs compares the time taken by the debugger to solve the 
 - Julia was easiest for people to debug due to its readable syntax and similarities to Python
 - Participants voted Kotlin as the language that they would most likely work on, mostly because they were either familiar with the Kotlin or Java which they found identical to Kotlin.
 - Programmers are more comfortable with the languages that have more self-explanatory console output and readable source code. 
-- Moreover, debuggers prefered those languages that had desirable online documentation.
+- Moreover, participants prefered those languages that had desirable online documentation.
 
 ## Threats to validity
 **Bugs:**
