@@ -3,20 +3,20 @@
 ## Method
 
 1. **Initial setup:** For the initial setup of this experiment, we implemented Conway's Game of Life in three languages: Kotlin, Julia & Haskell and introduced two bugs in each implementation.
-   - Compilation bug: To evaluate how helpful compiler is to navigate through the bug.
+   - Compilation bug: To evaluate how helpful the compiler is to navigate through the bug.
    - Logical bug: To evaluate the readability of language.
-2. **Participants sign-up:** After the implementation, we let 10 participants sign up for our experiment and assigned each of the with a token to identify them anonymously. We setup a virtual meet of 30 minutes on zoom as per participant's preferred time for the upcoming debugging session.
-3. **Debugging session:** During the scheduled debugging session:
-   - Each session will be hosted and observed by 2 group members.
-   - Participants will be required to share their screen for us to observe.
-   - Debugger will follow instruction from the README file to perform the experiment. Session hosts will guide participant though the steps if needed.
+2. **Participants sign-up:** After the implementation, we let 10 participants sign up for our experiment and assigned each of them with a token to identify them anonymously. We set up a virtual meet of 30 minutes on Zoom per participant according to their preferred time for the debugging session.
+3. **Debugging session:** For each debugging session:
+   - It will have one participant and observed by two group members (hosts).
+   - The participant will be required to share their screen for us to note down observations.
+   - The participant will follow instructions from the README file to participate in the experiment. Session hosts may guide participant though the steps if needed.
    - Session hosts have permission to provide hints to participants to understand the bug after predefined threshold time. This factor will be considered for the final evaluation.
 4. **Observations:** While participant is debugging, following observations will be noted by the session hosts:
-   - For each Kotlin, Julia and Haskell debugging experiment:
+   - For debugging experiment in each language (Kotlin, Julia and Haskell):
       - Time taken to fix the compilation bug.
       - Time taken to fix the logical bug.
       - Used resources (i.e Internet search, Help from the session hosts)
-   - Did the participant use traditional backtracking approach to find the root cause of the error?
+   - Whether the participant used traditional backtracking approach to find the root cause of the error?
 5. **Post session survey:** Post debugging session, participants are required to complete the survey in order to record their information about their background knowledge and comments for the debugging session. This survey includes:
    - Familiarity with languages: Kotlin, Julia and Haskell prior this experiment.
    - For each Kotlin, julia and Haskell debugging experiment:
